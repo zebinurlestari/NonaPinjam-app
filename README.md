@@ -1,10 +1,10 @@
 # 🎀 NonaPinjam App (SmartBorrow System)
-Aplikasi manajemen peminjaman barang asrama berbasis web yang dirancang untuk mempermudah pendataan inventaris secara digital, transparan, dan terorganisir.
+Aplikasi manajemen peminjaman barang asrama berbasis web yang dirancang untuk mempermudah pendataan peminjaman inventaris secara digital, transparan, dan terorganisir.
 
 ---
 
 ## 📑 1. Latar Belakang
-Proyek ini dibuat untuk menggantikan sistem pencatatan manual di asrama putri yang seringkali menyebabkan data hilang atau lupa siapa yang bertanggung jawab atas suatu barang. Dengan **SmartBorrow**, setiap transaksi terekam secara otomatis ke dalam database.
+Proyek ini dibuat untuk memudahkan taruni meminjam barang asrama dengan lebih teorganisir dan terjamin untuk peminjaman dan pengembalian karena semua tercatat di web NonaPinjam.
 
 ## 🚀 2. Fitur Utama
 * **Autentikasi Ganda**: Sistem login dan registrasi akun untuk memastikan hanya penghuni resmi yang bisa mengakses dashboard.
