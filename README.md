@@ -62,10 +62,12 @@ erDiagram
     }
 ```
 
+## 💾 7. Skema Database (SQL)
+```sql
 CREATE DATABASE db_smartborrow;
-
 USE db_smartborrow;
 
+-- Struktur tabel untuk 'users'
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
@@ -73,6 +75,7 @@ CREATE TABLE users (
     role ENUM('admin', 'user') DEFAULT 'user'
 );
 
+-- Struktur tabel untuk 'peminjaman'
 CREATE TABLE peminjaman (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -81,5 +84,6 @@ CREATE TABLE peminjaman (
     barang VARCHAR(100) NOT NULL,
     tanggal_pinjam DATE NOT NULL,
     status ENUM('Dipinjam', 'Kembali') DEFAULT 'Dipinjam',
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+```
