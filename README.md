@@ -61,3 +61,29 @@ erDiagram
         string status
     }
 ```
+
+## 💾 7. Skema Database (SQL)
+Gunakan query berikut untuk membuat struktur tabel yang sesuai dengan sistem ini:
+
+```sql
+CREATE DATABASE db_smartborrow;
+
+USE db_smartborrow;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'user') DEFAULT 'user'
+);
+
+CREATE TABLE peminjaman (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    nama_peminjam VARCHAR(100) NOT NULL,
+    nim VARCHAR(20) NOT NULL,
+    barang VARCHAR(100) NOT NULL,
+    tanggal_pinjam DATE NOT NULL,
+    status ENUM('Dipinjam', 'Kembali') DEFAULT 'Dipinjam',
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
