@@ -45,7 +45,7 @@ flowchart TD
     Logout --> End([End])
 ```
 
-
+```mermaid
 erDiagram
     USERS ||--o{ PEMINJAMAN : "melakukan"
     USERS {
@@ -60,3 +60,4 @@ erDiagram
         string barang
         string status
     }
+```
