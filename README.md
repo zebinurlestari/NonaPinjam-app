@@ -42,3 +42,18 @@ flowchart TD
     Simpan --> Dash
     Dash --> Logout[Klik Logout]
     Logout --> End([End])
+
+
+## 🗄️ Database Diagram
+```mermaid
+erDiagram
+    USERS ||--o{ PEMINJAMAN : makes
+    USERS {
+        int id
+        string username
+    }
+    PEMINJAMAN {
+        int id
+        int user_id
+        string barang
+    }
