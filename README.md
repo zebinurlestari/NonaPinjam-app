@@ -48,6 +48,9 @@ flowchart TD
     
     Dash --> Logout[Klik Logout]
     Logout --> End([End])
+
+
+
 erDiagram
     USERS ||--o{ PEMINJAMAN : "melakukan"
     USERS {
