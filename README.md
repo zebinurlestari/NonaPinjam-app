@@ -42,22 +42,3 @@ flowchart TD
     Simpan --> Dash
     Dash --> Logout[Klik Logout]
     Logout --> End([End])
-
-
-erDiagram
-    USERS ||--o{ PEMINJAMAN : "melakukan"
-    USERS {
-        int id PK
-        string username
-        string password
-        string role
-    }
-    PEMINJAMAN {
-        int id PK
-        int user_id FK
-        string nama_peminjam
-        string nim
-        string barang
-        date tanggal_pinjam
-        string status
-    }
