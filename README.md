@@ -19,30 +19,37 @@ NonaPinjam adalah sistem informasi yang dikembangkan untuk mendigitalkan proses 
 * `peminjaman.php`: Proses CRUD data.
 * `daftar_peminjaman.php`: Tabel riwayat pinjaman.
 
-## 📊 4. Activity Diagram
-Alur proses dari login hingga simpan data peminjaman:
-
+## 📊 Activity Diagram
 ```mermaid
 flowchart TD
-    Start([Start]) --> Login[Halaman Login]
-    Login --> PunyaAkun{Sudah Punya Akun?}
-    
-    PunyaAkun -- Tidak --> Register[Register New Account]
-    Register --> Login
-    
-    PunyaAkun -- Ya --> Auth[Input Email & Password]
-    Auth --> Val{Validasi Database}
-    Val -- Gagal --> Login
-    
-    Val -- Sukses --> Dash[Dashboard NonaPinjam]
-    Dash --> Action{Pilih Aktivitas}
-    
-    Action -- Ajukan Pinjaman --> Form[Isi Nama, Barang, Tanggal]
-    Action -- Kelola Data --> Table[Lihat Tabel Data]
-    
-    Form --> Simpan[Simpan ke Database]
-    Simpan --> Dash
-    
-    Dash --> Logout[Klik Logout]
-    Logout --> End([End])
+    A([Start]) --> B[Halaman Login]
+    B --> C{Cek Akun}
+    C -- Belum Ada --> D[Registrasi]
+    D --> B
+    C -- Sudah Ada --> E[Input Kredensial]
+    E --> F{Validasi}
+    F -- Gagal --> B
+    F -- Sukses --> G[Dashboard]
+    G --> H[Pilih Ajukan Pinjaman]
+    H --> I[Input Data Peminjaman]
+    I --> J[Simpan ke Database]
+    J --> G
+    G --> K[Logout]
+    K --> L([End])
+```
 
+
+erDiagram
+    USERS ||--o{ PEMINJAMAN : "melakukan"
+    USERS {
+        int id PK
+        string username
+        string password
+    }
+    PEMINJAMAN {
+        int id PK
+        int user_id FK
+        string nama_peminjam
+        string barang
+        string status
+    }
