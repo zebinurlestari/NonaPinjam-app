@@ -1,59 +1,50 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎀 NonaPinjam App (SmartBorrow System)
+Aplikasi manajemen peminjaman barang asrama berbasis web yang dirancang untuk mempermudah pendataan inventaris secara digital, transparan, dan terorganisir.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
 
-## About Laravel
+## 📑 1. Latar Belakang
+Proyek ini dibuat untuk menggantikan sistem pencatatan manual di asrama putri yang seringkali menyebabkan data hilang atau lupa siapa yang bertanggung jawab atas suatu barang. Dengan **SmartBorrow**, setiap transaksi terekam secara otomatis ke dalam database.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 2. Fitur Utama
+* **Autentikasi Ganda**: Sistem login dan registrasi akun untuk memastikan hanya penghuni resmi yang bisa mengakses dashboard.
+* **Dashboard Personal**: Menampilkan sapaan dinamis berdasarkan sesi user yang sedang aktif.
+* **Form Peminjaman Terintegrasi**: Pengguna dapat menginput nama, NIM, nama barang, dan tanggal peminjaman dalam satu formulir.
+* **Tabel Monitoring Real-Time**: Daftar riwayat peminjaman yang dilengkapi dengan status barang (Dipinjam/Kembali) untuk memudahkan kontrol.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📂 3. Struktur Folder & File
+Berikut adalah arsitektur file yang digunakan dalam pengembangan sistem ini:
+* `config.php`: Berisi script koneksi antara PHP dan database MySQL.
+* `login.php` & `register.php`: Menangani proses autentikasi dan pendaftaran user baru.
+* `index.php`: Halaman dashboard utama yang menggabungkan fitur input dan tabel monitoring.
+* `peminjaman.php`: Logika pemrosesan data (Create, Update, Delete) ke database.
+* `logout.php`: Menghapus sesi aktif untuk keamanan akun.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📊 4. Analisis Sistem
 
-## Learning Laravel
+### A. Activity Diagram
+Alur kerja sistem dari proses masuk hingga pengelolaan data:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```mermaid
+flowchart TD
+    Start([Start]) --> Login[Halaman Login]
+    Login --> PunyaAkun{Sudah Punya Akun?}
+    
+    PunyaAkun -- Tidak --> Register[Register New Account]
+    Register --> Login
+    
+    PunyaAkun -- Ya --> Auth[Input Email & Password]
+    Auth --> Val{Validasi Database}
+    Val -- Gagal --> Login
+    
+    Val -- Sukses --> Dash[Dashboard NonaPinjam]
+    Dash --> Action{Pilih Aktivitas}
+    
+    Action -- Ajukan Pinjaman --> Form[Isi Nama, Barang, Tanggal]
+    Action -- Kelola Data --> Table[Lihat Tabel Data]
+    
+    Form --> Simpan[Simpan ke Database]
+    Simpan --> Dash
+    
+    Dash --> Logout[Klik Logout]
+    Logout --> End([End])
