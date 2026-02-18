@@ -29,26 +29,19 @@ Alur kerja sistem dari proses masuk hingga pengelolaan data:
 flowchart TD
     Start([Start]) --> Login[Halaman Login]
     Login --> PunyaAkun{Sudah Punya Akun?}
-    
     PunyaAkun -- Tidak --> Register[Register New Account]
     Register --> Login
-    
     PunyaAkun -- Ya --> Auth[Input Email & Password]
     Auth --> Val{Validasi Database}
     Val -- Gagal --> Login
-    
     Val -- Sukses --> Dash[Dashboard NonaPinjam]
     Dash --> Action{Pilih Aktivitas}
-    
     Action -- Ajukan Pinjaman --> Form[Isi Nama, Barang, Tanggal]
     Action -- Kelola Data --> Table[Lihat Tabel Data]
-    
     Form --> Simpan[Simpan ke Database]
     Simpan --> Dash
-    
     Dash --> Logout[Klik Logout]
     Logout --> End([End])
-
 
 
 erDiagram
