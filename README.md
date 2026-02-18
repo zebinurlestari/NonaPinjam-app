@@ -62,10 +62,6 @@ erDiagram
     }
 ```
 
-## 💾 7. Skema Database (SQL)
-Gunakan query berikut untuk membuat struktur tabel yang sesuai dengan sistem ini:
-
-```sql
 CREATE DATABASE db_smartborrow;
 
 USE db_smartborrow;
