@@ -1,5 +1,5 @@
 # 🎀 NonaPinjam App (SmartBorrow System)
-Aplikasi manajemen peminjaman barang asrama berbasis web untuk pendataan yang lebih transparan dan teratur.
+Aplikasi manajemen peminjaman barang asrama putri berbasis web untuk pendataan yang lebih transparan dan teratur.
 
 ---
 
@@ -46,18 +46,3 @@ flowchart TD
     Dash --> Logout[Klik Logout]
     Logout --> End([End])
 
-erDiagram
-    USERS ||--o{ PEMINJAMAN : "melakukan"
-    USERS {
-        int id PK
-        string username
-        string password
-    }
-    PEMINJAMAN {
-        int id PK
-        int user_id FK
-        string nama_peminjam
-        string nim
-        string barang
-        string status
-    }
