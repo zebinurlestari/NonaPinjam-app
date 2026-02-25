@@ -92,6 +92,8 @@ stateDiagram-v2
     style Input fill:#FFC0CB,stroke:#FF69B4
     style Server fill:#FFF0F5,stroke:#FFB6C1
 ```
+### 3. Entity Relationship Diagram (ERD) 🌸
+Struktur tabel inti pada server MySQL
 
 ```mermaid
 erDiagram
