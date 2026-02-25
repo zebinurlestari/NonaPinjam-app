@@ -156,3 +156,23 @@ Berikut adalah daftar fitur utama yang diimplementasikan dalam ekosistem **NonaP
 
 ---
 
+## 🔗 API Documentation (NonaPinjam Sync)
+Endpoint ini digunakan oleh aplikasi Android (via Volley) untuk mengambil dan mengirim data peminjaman ke server MySQL.
+
+* **Endpoint**: `http://ip-laptop-kamu/smartborrow/get_data.php`
+* **Method**: `GET / POST`
+* **Response Format**: `JSON`
+
+```json
+{
+    "status": "SUCCESS",
+    "message": "DATA_PEMINJAMAN_SYNC_COMPLETE",
+    "data": [
+        {
+            "id": 1,
+            "nama_peminjam": "User Terdaftar",
+            "nama_barang": "Laptop Pro",
+            "tgl_pinjam": "2026-02-25"
+        }
+    ]
+}
