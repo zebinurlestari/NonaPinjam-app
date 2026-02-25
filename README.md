@@ -93,16 +93,15 @@ stateDiagram-v2
     style Server fill:#FFF0F5,stroke:#FFB6C1
 ```
 
-## 🛠️ Tech Stack (Pink Edition)
+## 🛠️ Tech Stack
 
-### 💻 Web Backend & API (Command Center)
-* **Language**: ![PHP](https://img.shields.io/badge/PHP_8.x-FF69B4?style=flat-square&logo=php&logoColor=white) Native.
-* **Database**: ![MySQL](https://img.shields.io/badge/MySQL_8.0-FFB6C1?style=flat-square&logo=mysql&logoColor=white) sebagai penyimpanan data pusat.
-* **Server**: ![XAMPP](https://img.shields.io/badge/XAMPP-Local_Server-FFC0CB?style=flat-square&logo=xampp&logoColor=white) Apache Server.
-* **API**: ![REST_API](https://img.shields.io/badge/REST_API-JSON-FF1493?style=flat-square) sebagai jembatan data antar platform.
+### 💻 Web Backend (Command Center)
+* **Language**: PHP Native
+* **Database**: MySQL 8.0
+* **API**: RESTful JSON Endpoint
 
-### 📱 Mobile (Client Application)
-* **Language**: ![Java](https://img.shields.io/badge/Java_Android-FF69B4?style=flat-square&logo=java&logoColor=white) sebagai bahasa pemrograman utama.
-* **IDE**: ![Android_Studio](https://img.shields.io/badge/Android_Studio-Pink_Vibe-FFB6C1?style=flat-square&logo=android-studio&logoColor=white).
-* **Networking**: ![Volley](https://img.shields.io/badge/Volley_Library-HTTP-FFC0CB?style=flat-square) untuk pengiriman data secara *asynchronous*.
-* **UI/UX**: ![Material_Design](https://img.shields.io/badge/Material_Design-CardView-FF1493?style=flat-square) untuk tampilan yang modern dan responsif.
+### 📱 Mobile (Digital Client)
+* **Language**: Java
+* **IDE**: Android Studio
+* **Networking**: Volley Library
+* **UI Components**: RecyclerView, CardView, TableLayout
