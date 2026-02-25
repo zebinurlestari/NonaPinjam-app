@@ -9,7 +9,7 @@
 
 <br>
 
-**NonaPinjam** adalah ekosistem manajemen inventaris dan peminjaman barang yang terdiri dari **Web Admin Dashboard** dan **Mobile Client App**. Sistem ini dirancang untuk memudahkan proses pencatatan dan pemantauan sirkulasi barang secara *real-time* yang tersinkronisasi di semua perangkat.
+**NonaPinjam** adalah aplikasi untuk meminjam inventaris asrama putri yang terdiri dari **Web Admin Dashboard** dan **Mobile Client App**. Sistem ini dirancang untuk memudahkan proses pencatatan dan pemantauan sirkulasi barang secara *real-time* yang tersinkronisasi di semua perangkat.
 
 ---
 
@@ -29,6 +29,8 @@ graph TD
     
     Admin -->|Web| KelolaData(Kelola & Monitoring Data)
     Admin -->|Web| HapusData(Hapus Data Peminjaman)
+```
+
 sequenceDiagram
     participant App as Mobile App
     participant API as PHP API (smartborrow)
@@ -38,6 +40,7 @@ sequenceDiagram
     API->>DB: INSERT INTO pinjaman
     DB-->>API: Success Response
     API-->>App: JSON {"status":"success"}
+    
 erDiagram
     USERS ||--o{ PINJAMAN : "melakukan"
     USERS {
