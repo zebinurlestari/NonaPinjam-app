@@ -176,58 +176,23 @@ Endpoint ini digunakan oleh aplikasi Android (via Volley) untuk mengambil dan me
         }
     ]
 }
-
-
-Gemini berkata
-Waduh, siap bosku! Saya mengerti, format yang sebelumnya memang terlihat berantakan karena terlalu banyak teks merah dan simbol yang tidak perlu.
-
-Agar README.md kamu terlihat rapi, bersih, dan profesional di GitHub, ini adalah versi final dengan format Clean & Aesthetic (tetap dengan nuansa pink di diagram).
-
-Silakan Copy kode di bawah ini:
-
-Markdown
-# 🌸 NonaPinjam
-**Sistem Manajemen Peminjaman Barang Terintegrasi (Web & Mobile)**
-
 ---
 
-## 🔗 API Documentation (NonaPinjam Sync)
-Endpoint untuk sinkronisasi data antara Web Admin dan Mobile Android.
+### **🚀 Instalasi & Setup (Localhost)**
+Ikuti langkah-langkah berikut agar sinkronisasi Client-Server berjalan lancar.
 
-* **URL**: `http://ip-laptop/smartborrow/get_data.php`
-* **Method**: `GET`
-* **Format**: `JSON`
+TAHAP 1: Konfigurasi Server (Web PHP Native)
+Pindahkan Folder: Taruh folder smartborrow ke dalam direktori C:/xampp/htdocs/.
 
-**Response Success (200 OK):**
-```json
-{
-    "status": "SUCCESS",
-    "message": "DATA_PEMINJAMAN_SYNC_COMPLETE",
-    "data": [
-        {
-            "id": 1,
-            "nama_peminjam": "User Terdaftar",
-            "nama_barang": "Laptop Pro",
-            "tgl_pinjam": "2026-02-25"
-        }
-    ]
-}
+Database: Buat database bernama db_smartborrow di phpMyAdmin, lalu import file .sql.
 
-###🚀 **Instalasi & Setup (Localhost)**
-Ikuti langkah berikut agar sistem berjalan lancar di lingkungan lokal.
+Status XAMPP: Pastikan modul Apache dan MySQL dalam kondisi Running.
 
-TAHAP 1: Konfigurasi Server (Web)
-Persiapan Folder: Pindahkan folder smartborrow ke direktori C:/xampp/htdocs/.
+Cek Akses: Buka browser dan akses http://localhost/smartborrow/.
 
-Database: Buat database db_smartborrow di phpMyAdmin, lalu import file .sql.
+TAHAP 2: Konfigurasi Klien (Mobile Android)
+Buka Proyek: Jalankan Android Studio dan buka folder proyek mobile kamu.
 
-Running: Pastikan Apache dan MySQL di XAMPP dalam status Running.
+Sync Gradle: Tunggu proses build hingga library Volley terpasang dengan benar.
 
-Akses: Buka http://localhost/smartborrow/ di browser.
-
-TAHAP 2: Konfigurasi Klien (Mobile)
-Android Studio: Buka folder proyek mobile menggunakan Android Studio.
-
-Sync Gradle: Tunggu proses build selesai (pastikan library Volley terpasang).
-
-PENTING! Konfigurasi IP: Ganti localhost menjadi alamat IP Laptop kamu di file Java:
+PENTING! Konfigurasi IP: Ganti alamat localhost pada file Java dengan Alamat IP Laptop kamu agar bisa diakses HP/Emulator:
