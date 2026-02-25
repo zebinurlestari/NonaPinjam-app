@@ -39,27 +39,35 @@ graph LR
     style UC3 fill:#FFF0F5,stroke:#FFB6C1
 ```
 
-sequenceDiagram
-    participant App as Mobile App
-    participant API as PHP API (smartborrow)
-    participant DB as MySQL Database
+```mermaid
+stateDiagram-v2
+    [*] --> BukaAplikasi
     
-    App->>API: POST Data (Nama, Barang, Tgl)
-    API->>DB: INSERT INTO pinjaman
-    DB-->>API: Success Response
-    API-->>App: JSON {"status":"success"}
+    state "Halaman Auth" as Auth {
+        BukaAplikasi --> CekAkun
+        CekAkun --> Register : Belum Punya Akun
+        Register --> Login
+        CekAkun --> Login : Sudah Punya Akun
+    }
     
-erDiagram
-    USERS ||--o{ PINJAMAN : "melakukan"
-    USERS {
-        int id PK
-        string name
-        string email
-        string password
+    Login --> Dashboard : Berhasil Masuk
+    
+    state "Proses Input Data" as Input {
+        Dashboard --> FormInput : Klik Tambah Pinjaman
+        FormInput --> KirimData : Isi Nama & Barang
+        KirimData --> API_PHP : Kirim via Volley
     }
-    PINJAMAN {
-        int id PK
-        string nama_peminjam
-        string nama_barang
-        date tgl_pinjam
+    
+    state "Server & Database" as Server {
+        API_PHP --> MySQL : Simpan ke db_smartborrow
+        MySQL --> ResponJSON : Data Tersimpan
     }
+    
+    ResponJSON --> Dashboard : Tampilkan Toast Berhasil
+    Dashboard --> [*]
+
+    %% Styling Warna Pink
+    style Auth fill:#FFB6C1,stroke:#FF69B4
+    style Input fill:#FFC0CB,stroke:#FF69B4
+    style Server fill:#FFF0F5,stroke:#FFB6C1
+```
