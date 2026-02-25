@@ -1,4 +1,4 @@
-# 📦 NonaPinjam 
+# 🌸 NonaPinjam 
 
 **Sistem Manajemen Peminjaman Barang Terintegrasi (Web & Mobile)**
 
@@ -33,7 +33,7 @@ Sinkronisasi Lintas Platform: Menghubungkan aplikasi Android dengan server lokal
 
 ## 📊 Diagram Sistem
 
-### 1. Use Case Diagram
+### 1. Use Case Diagram 🌸
 Diagram ini menggambarkan hak akses User di Mobile.
 
 ```mermaid
@@ -57,7 +57,7 @@ graph LR
     style UC3 fill:#FFF0F5,stroke:#FFB6C1
 ```
 
-### 2. Activity Diagram (Alur Peminjaman Barang)
+### 2. Activity Diagram (Alur Peminjaman Barang) 🌸
 Diagram ini menjelaskan langkah-langkah yang dilakukan User di dalam aplikasi Mobile.
 
 ```mermaid
