@@ -39,6 +39,9 @@ graph LR
     style UC3 fill:#FFF0F5,stroke:#FFB6C1
 ```
 
+### 2. Activity Diagram (Alur Peminjaman Barang)
+Diagram ini menjelaskan langkah-langkah yang dilakukan User di dalam aplikasi Mobile.
+
 ```mermaid
 stateDiagram-v2
     [*] --> BukaAplikasi
