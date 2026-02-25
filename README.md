@@ -19,16 +19,24 @@
 Diagram ini menggambarkan hak akses antara Admin di Web dan User di Mobile.
 
 ```mermaid
-graph TD
-    User([User / Mahasiswa])
-    Admin([Admin / Petugas])
+graph LR
+    User((User / Mahasiswa))
     
-    User -->|Mobile App| Login(Login Akun)
-    User -->|Mobile App| Pinjam(Input Peminjaman Barang)
-    User -->|Mobile App| Lihat(Lihat Status Pinjaman)
+    subgraph "Aplikasi NonaPinjam (Mobile)"
+    UC1(Registrasi Akun)
+    UC2(Login Akun)
+    UC3(Input Peminjaman Barang)
     
-    Admin -->|Web| KelolaData(Kelola & Monitoring Data)
-    Admin -->|Web| HapusData(Hapus Data Peminjaman)
+    UC2 -.-> |include| UC3
+    end
+    
+    User --> UC1
+    User --> UC2
+    
+    style User fill:#FFB6C1,stroke:#FF69B4
+    style UC1 fill:#FFF0F5,stroke:#FFB6C1
+    style UC2 fill:#FFF0F5,stroke:#FFB6C1
+    style UC3 fill:#FFF0F5,stroke:#FFB6C1
 ```
 
 sequenceDiagram
