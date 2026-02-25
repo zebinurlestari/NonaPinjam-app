@@ -92,20 +92,26 @@ stateDiagram-v2
     style Input fill:#FFC0CB,stroke:#FF69B4
     style Server fill:#FFF0F5,stroke:#FFB6C1
 ```
+
+```mermaid
 erDiagram
     USERS ||--o{ PINJAMAN : "melakukan"
+    
     USERS {
         int id PK "Auto Increment"
-        string nama "Nama Lengkap User"
-        string email "Email untuk Login"
-        string password "Password (Hashed)"
+        string nama "Nama Lengkap"
+        string email "Email Login"
+        string password "Password Hashed"
     }
+
     PINJAMAN {
         int id PK "Auto Increment"
-        string nama_peminjam "Relasi ke Nama User"
-        string nama_barang "Nama Barang yang Dipinjam"
-        date tgl_pinjam "Tanggal Input Data"
+        string nama_peminjam "Relasi User"
+        string nama_barang "Nama Barang"
+        date tgl_pinjam "Tanggal Input"
     }
+    }
+```
 ## 🛠️ Tech Stack
 
 ### 💻 Web Backend (Command Center)
