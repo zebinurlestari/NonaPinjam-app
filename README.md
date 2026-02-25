@@ -12,11 +12,29 @@
 **NonaPinjam** adalah aplikasi untuk meminjam inventaris asrama putri yang terdiri dari **Web Admin Dashboard** dan **Mobile Client App**. Sistem ini dirancang untuk memudahkan proses pencatatan dan pemantauan sirkulasi barang secara *real-time* yang tersinkronisasi di semua perangkat.
 
 ---
+<div align="center">
+  <img src="https://img.shields.io/badge/Status-Pink_Vibes-FF69B4?style=for-the-badge" />
+</div>
+
+> [!NOTE]
+> ### 🌸 Deskripsi Proyek
+> NonaPinjam adalah aplikasi digital terintegrasi yang dirancang untuk peminjaman barang secara efisien. Proyek ini menggabungkan platform Web Admin sebagai pusat kendali data dan Aplikasi Mobile Android sebagai antarmuka utama bagi pengguna untuk melakukan transaksi peminjaman secara portabel. Dengan sinkronisasi real-time, setiap aktivitas yang dilakukan di aplikasi mobile akan langsung tercatat dalam basis data pusat.
+
+> ### 🎯 Tujuan Utama
+> Digitalisasi Inventaris: Menggantikan sistem pencatatan manual berbasis kertas dengan basis data MySQL yang terstruktur dan mudah diakses.
+
+Efisiensi Manajemen: Mempermudah Biro Asrama Putri untuk mengoordinasi inventaris Asrama Putri 
+
+Aksesibilitas Pengguna: Memberikan kemudahan bagi pengguna (mahasiswa/staf) untuk mendaftar akun dan menginput data peminjaman langsung dari device mereka.
+
+Integritas Data: Menjamin keamanan akun pengguna melalui sistem autentikasi login dan registrasi yang terenkripsi.
+
+Sinkronisasi Lintas Platform: Menghubungkan aplikasi Android dengan server lokal menggunakan REST API untuk pertukaran data yang cepat dan akurat.
 
 ## 📊 Diagram Sistem
 
 ### 1. Use Case Diagram
-Diagram ini menggambarkan hak akses antara Admin di Web dan User di Mobile.
+Diagram ini menggambarkan hak akses User di Mobile.
 
 ```mermaid
 graph LR
