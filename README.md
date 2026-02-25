@@ -178,21 +178,23 @@ Endpoint ini digunakan oleh aplikasi Android (via Volley) untuk mengambil dan me
 }
 ---
 
+
 ### **🚀 Instalasi & Setup (Localhost)**
-Ikuti langkah-langkah berikut agar sinkronisasi Client-Server berjalan lancar.
+Ikuti urutan langkah di bawah ini agar komunikasi antara Web PHP dan Mobile Android berjalan lancar.
 
 TAHAP 1: Konfigurasi Server (Web PHP Native)
-Pindahkan Folder: Taruh folder smartborrow ke dalam direktori C:/xampp/htdocs/.
+Persiapan Folder: Pindahkan folder smartborrow ke dalam direktori C:/xampp/htdocs/.
 
-Database: Buat database bernama db_smartborrow di phpMyAdmin, lalu import file .sql.
+Database: Buka phpMyAdmin, buat database baru bernama db_smartborrow, lalu import file .sql milikmu.
 
-Status XAMPP: Pastikan modul Apache dan MySQL dalam kondisi Running.
+Running: Pastikan modul Apache dan MySQL di XAMPP dalam status Running.
 
 Cek Akses: Buka browser dan akses http://localhost/smartborrow/.
 
 TAHAP 2: Konfigurasi Klien (Mobile Android)
 Buka Proyek: Jalankan Android Studio dan buka folder proyek mobile kamu.
 
-Sync Gradle: Tunggu proses build hingga library Volley terpasang dengan benar.
+Sinkronisasi: Tunggu proses Gradle Build selesai (pastikan library Volley sudah terpasang).
 
-PENTING! Konfigurasi IP: Ganti alamat localhost pada file Java dengan Alamat IP Laptop kamu agar bisa diakses HP/Emulator:
+Konfigurasi IP (PENTING): Ganti localhost dengan IP Address Laptop kamu di file Java:
+
