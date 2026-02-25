@@ -105,3 +105,15 @@ stateDiagram-v2
 * **IDE**: Android Studio
 * **Networking**: Volley Library
 * **UI Components**: RecyclerView, CardView, TableLayout
+
+## 📋 User Story
+
+Bagian ini merincikan kebutuhan fungsional dari sudut pandang pengguna sistem, baik dari sisi Mobile maupun Web Dashboard.
+
+| ID | User Story | Target | Priority |
+|---|---|---|---|
+| **US-01** | Sebagai **User**, saya ingin melakukan registrasi akun baru agar bisa mengakses fitur peminjaman. | Mobile | 💖 **High** |
+| **US-02** | Sebagai **User**, saya ingin melakukan login dengan aman untuk melindungi data pribadi saya. | Mobile | 💖 **High** |
+| **US-03** | Sebagai **User**, saya ingin menginput data barang yang akan dipinjam beserta tanggalnya melalui HP. | Mobile | 💖 **High** |
+| **US-04** | Sebagai **User**, saya ingin data yang saya input di HP otomatis sinkron dengan database server pusat. | Mobile | 💖 **High** |
+---
