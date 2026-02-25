@@ -92,7 +92,20 @@ stateDiagram-v2
     style Input fill:#FFC0CB,stroke:#FF69B4
     style Server fill:#FFF0F5,stroke:#FFB6C1
 ```
-
+erDiagram
+    USERS ||--o{ PINJAMAN : "melakukan"
+    USERS {
+        int id PK "Auto Increment"
+        string nama "Nama Lengkap User"
+        string email "Email untuk Login"
+        string password "Password (Hashed)"
+    }
+    PINJAMAN {
+        int id PK "Auto Increment"
+        string nama_peminjam "Relasi ke Nama User"
+        string nama_barang "Nama Barang yang Dipinjam"
+        date tgl_pinjam "Tanggal Input Data"
+    }
 ## 🛠️ Tech Stack
 
 ### 💻 Web Backend (Command Center)
@@ -117,3 +130,22 @@ Bagian ini merincikan kebutuhan fungsional dari sudut pandang pengguna sistem, b
 | **US-03** | Sebagai **User**, saya ingin menginput data barang yang akan dipinjam beserta tanggalnya melalui HP. | Mobile | 💖 **High** |
 | **US-04** | Sebagai **User**, saya ingin data yang saya input di HP otomatis sinkron dengan database server pusat. | Mobile | 💖 **High** |
 ---
+
+## 📝 SRS - Feature List
+
+Berikut adalah daftar fitur utama yang diimplementasikan dalam ekosistem **NonaPinjam**:
+
+### 🌐 Fitur Web (Admin Dashboard)
+* **Pusat Monitoring**: Halaman utama untuk memantau seluruh aktivitas peminjaman barang secara real-time.
+* **Management Data**: Fitur CRUD (Create, Read, Update, Delete) untuk mengelola inventaris dan data peminjam.
+* **Database Integrator**: Mengelola sinkronisasi data langsung dengan MySQL database pusat.
+* **API Provider**: Menyediakan endpoint RESTful JSON untuk melayani permintaan data dari aplikasi mobile.
+
+### 📱 Fitur Mobile (Android Client)
+* **Auth System**: Fitur Login dan Registrasi User untuk keamanan akses aplikasi.
+* **Live Sync Dashboard**: Menarik dan menampilkan data peminjaman terbaru dari server menggunakan **Volley Library**.
+* **Input Peminjaman**: Form interaktif untuk menginput nama barang dan tanggal pinjam langsung dari HP.
+* **Responsive Layout**: Antarmuka yang rapi dan nyaman dipandang menggunakan **CardView** dan **TableLayout**.
+
+---
+
