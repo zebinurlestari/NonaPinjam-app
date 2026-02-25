@@ -110,7 +110,6 @@ erDiagram
         string nama_barang "Nama Barang"
         date tgl_pinjam "Tanggal Input"
     }
-    }
 ```
 ## 🛠️ Tech Stack
 
