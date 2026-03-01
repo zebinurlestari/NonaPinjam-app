@@ -114,30 +114,6 @@ erDiagram
     }
 ```
 
-SEQUENCE DIAGRAM 
-```sequenceDiagram
-    autonumber
-    actor User as Mahasiswi (User)
-    participant App as Android App (Java)
-    participant API as API (PHP Native)
-    participant DB as Database (MySQL)
-
-    Note over User, App: Proses Input Peminjaman
-    User->>App: Input Nama & Barang
-    User->>App: Klik Tombol "Kirim Data"
-    
-    App->>App: Validasi Input (Cek Kosong)
-    
-    Note right of App: Kirim data via Volley (JSON)
-    App->>API: HTTP POST (nama, barang, tgl)
-    
-    API->>DB: Query INSERT INTO pinjaman
-    DB-->>API: Konfirmasi Sukses
-    
-    API-->>App: Respon JSON {"status":"SUCCESS"}
-    
-    App-->>User: Tampilkan Toast "Data Tersimpan"
-```
 
 ## 🛠️ Tech Stack
 
